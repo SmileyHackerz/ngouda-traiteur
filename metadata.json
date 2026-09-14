@@ -1,0 +1,8 @@
+{
+  "name": "Ngouda Traiteur — Traiteur Événementiel",
+  "description": "Traiteur événementiel haut de gamme à Dakar : mariages, galas, cocktails et réceptions d'entreprise, menus signatures et créations sur-mesure.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

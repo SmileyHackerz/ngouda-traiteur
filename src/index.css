@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surfaces — ivoire / pierre */
+  --color-surface: #fbf9f5;
+  --color-surface-dim: #dbdad6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3ef;
+  --color-surface-container: #efeeea;
+  --color-surface-container-high: #eae8e4;
+  --color-surface-container-highest: #e4e2de;
+  --color-on-surface: #1b1c1a;
+  --color-on-surface-variant: #524348;
+  --color-outline: #847378;
+  --color-outline-variant: #d6c1c7;
+
+  /* Bordeaux */
+  --color-primary: #2b0018;
+  --color-primary-container: #4a0e2e;
+  --color-primary-deep: #1a000f;
+  --color-on-primary: #fdfbf7;
+  --color-primary-fixed: #ffd8e5;
+  --color-primary-fixed-dim: #ffb0cf;
+  --color-rose: #c57597;
+
+  /* Or */
+  --color-gold: #C5A059;
+  --color-gold-light: #e2c98f;
+  --color-gold-pale: #fed488;
+  --color-gold-dark: #967431;
+  --color-secondary: #775a19;
+
+  --color-error: #ba1a1a;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-label: "Hanken Grotesk", system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-padding-top: 88px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  font-feature-settings: "kern", "liga", "onum";
+  caret-color: var(--color-gold);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.font-label {
+  font-family: var(--font-label);
+}
+
+/* ---------- Browser surfaces ---------- */
+::selection {
+  background: var(--color-gold-pale);
+  color: var(--color-primary);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+html {
+  scrollbar-color: rgba(43, 0, 24, 0.35) transparent;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(43, 0, 24, 0.28);
+  border: 3px solid var(--color-surface);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(43, 0, 24, 0.5);
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@layer components {
+/* ---------- Textures & materials ---------- */
+.texture-paper {
+  background-image:
+    radial-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Grain very subtle on burgundy blocks */
+.grain-dark {
+  position: relative;
+  isolation: isolate;
+}
+.grain-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(197, 160, 89, 0.16), transparent 42%),
+    radial-gradient(circle at 85% 90%, rgba(197, 160, 89, 0.10), transparent 38%);
+}
+
+/* Hairline dorée dégradée */
+.hairline-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold) 30%, var(--color-gold) 70%, transparent);
+}
+
+/* Ligne d'en-tête courte */
+.rule-gold {
+  display: inline-block;
+  width: 2.25rem;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+/* Liste à puces losange or */
+.list-diamond {
+  list-style: none;
+  padding-left: 0;
+}
+.list-diamond li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+.list-diamond li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+}
+
+/* Lien tertiaire à soulignement or */
+.link-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.link-gold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: var(--color-gold);
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform 320ms var(--ease-out-expo);
+}
+.link-gold:hover::after,
+.link-gold:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Champs soulignés */
+.field-underline {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-outline-variant);
+  padding: 0.75rem 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  color: var(--color-on-surface);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.field-underline::placeholder {
+  color: #9a8d91;
+}
+.field-underline:focus,
+.field-underline:focus-visible {
+  outline: none;
+  border-bottom-color: var(--color-gold);
+  box-shadow: 0 1px 0 0 var(--color-gold);
+}
+.field-underline[aria-invalid="true"] {
+  border-bottom-color: var(--color-error);
+}
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.animate-float-y {
+  animation: float-y 2.2s ease-in-out infinite;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-float-y { animation: none; }
+  *, ::before, ::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;display=swap');
+    .name { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; letter-spacing: 0.22em; }
+    .sub  { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 600; letter-spacing: 0.42em; }
+    .n    { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 600; }
+  </style>
+  <rect width="640" height="360" fill="#2b0018"/>
+  <g transform="translate(260 40) scale(1.2)">
+    <text x="50" y="69" text-anchor="middle" class="n" font-size="31" fill="#fdfbf7">N</text>
+    <g stroke="#C5A059" stroke-width="2.2" stroke-linecap="round" fill="none">
+      <path d="M14 74 A36 36 0 0 1 86 74"/>
+      <line x1="50" y1="30.5" x2="50" y2="37.5" stroke-width="1.8"/>
+      <circle cx="50" cy="27" r="3.2" fill="#C5A059" stroke="none"/>
+      <line x1="8" y1="80" x2="92" y2="80" stroke-width="2.4"/>
+      <line x1="26" y1="86.5" x2="74" y2="86.5" stroke-width="1.2" opacity="0.7"/>
+    </g>
+  </g>
+  <text x="327" y="238" text-anchor="middle" class="name" font-size="56" fill="#fdfbf7">NGOUDA</text>
+  <line x1="196" y1="276" x2="236" y2="276" stroke="#C5A059" stroke-width="1"/>
+  <text x="325" y="282" text-anchor="middle" class="sub" font-size="17" fill="#e2c98f">TRAITEUR</text>
+  <line x1="404" y1="276" x2="444" y2="276" stroke="#C5A059" stroke-width="1"/>
+</svg>
