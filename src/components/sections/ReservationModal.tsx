@@ -40,7 +40,6 @@ const INITIAL_FORM: ReservationFormData = {
   eventLocation: '',
   selectedMenu: '',
   coffeeBreak: false,
-  thiebouYaap: false,
   customRequests: '',
   clientName: '',
   clientPhone: '',
@@ -89,8 +88,7 @@ export const buildQuoteMessage = (f: ReservationFormData, ref: string) => {
     `📅 Date : ${formatDate(f.eventDate)}`,
     `📍 Lieu : ${f.eventLocation}`,
     `🍽️ Menu : ${f.selectedMenu}`,
-    `☕ Pause café : ${f.coffeeBreak ? 'oui, en option' : 'non'}`,
-    `🍚 Thiébou Yaap : ${f.thiebouYaap ? 'oui, en option' : 'non'}`
+    `☕ Pause café : ${f.coffeeBreak ? 'oui, en option' : 'non'}`
   ];
   if (f.customRequests.trim()) lines.push(`📝 Souhaits : ${f.customRequests.trim()}`);
   lines.push(``, `Nom : ${f.clientName.trim()}`, `Téléphone : ${f.clientPhone.trim()}`);
@@ -373,7 +371,6 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                       ['Lieu', formData.eventLocation],
                       ['Menu', formData.selectedMenu],
                       ['Pause café', formData.coffeeBreak ? 'Oui, en option' : 'Non'],
-                      ['Thiébou Yaap', formData.thiebouYaap ? 'Oui, en option' : 'Non'],
                       ['Contact', `${formData.clientName} · ${formData.clientPhone}`]
                     ].map(([k, v]) => (
                       <React.Fragment key={k}>
@@ -601,12 +598,6 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                                 icon: Coffee,
                                 title: 'Ajouter la pause café',
                                 text: 'Thé, café, lait, Nescao, mini-viennoiseries, petits fours et jus naturels (bissap, gingembre, bouye).'
-                              },
-                              {
-                                key: 'thiebouYaap' as const,
-                                icon: UtensilsCrossed,
-                                title: 'Ajouter le Thiébou Yaap',
-                                text: 'Riz à la viande mijoté, servi en accompagnement supplémentaire sur chaque menu.'
                               }
                             ].map((opt) => {
                               const Icon = opt.icon;

@@ -128,7 +128,7 @@ export const MENUS_DATA: MenuItem[] = [
       {
         title: 'Plat',
         image: '/images/flyers/menu1-plat.jpg',
-        items: 'Poulet rôti grillé, Agneau rôti grillé, Rôti de porc'
+        items: 'Poulet rôti grillé, Agneau rôti grillé, Rôti de porc, Thiébou Yaap'
       },
       {
         title: 'Accompagnement',
@@ -143,11 +143,10 @@ export const MENUS_DATA: MenuItem[] = [
     ],
     highlights: [
       'Entrées fraîches : Salade de crudités, Niçoise, Mexicaine',
-      'Viandes rôties & grillées : Poulet, Agneau, Porc',
+      'Plats : Poulet et Agneau rôtis grillés, Rôti de porc, Thiébou Yaap',
       'Accompagnements variés : Frites, Plantain, Couscous, Riz blanc',
       'Dessert : Fruits frais de saison & Pause café en option'
     ],
-    options: ['Thiébou Yaap'],
     courses: [
       {
         title: 'Entrée Fraîche',
@@ -155,7 +154,7 @@ export const MENUS_DATA: MenuItem[] = [
       },
       {
         title: 'Plat Principal & Grillades',
-        description: 'Assortiment de viandes rôties et grillées : Poulet rôti grillé, Agneau tendre et Rôti de porc.'
+        description: 'Poulet rôti grillé, Agneau tendre, Rôti de porc et Thiébou Yaap mijoté.'
       },
       {
         title: 'Accompagnements au Choix',
@@ -191,7 +190,7 @@ export const MENUS_DATA: MenuItem[] = [
       {
         title: 'Plats',
         image: '/images/flyers/menu2-plats.jpg',
-        items: 'Poulet rôti grillé, Pilons panés, Agneau rôti grillé, Rôti de porc'
+        items: 'Poulet rôti grillé, Pilons panés, Agneau rôti grillé, Rôti de porc, Thiébou Yaap'
       },
       {
         title: 'Accompagnements',
@@ -206,11 +205,10 @@ export const MENUS_DATA: MenuItem[] = [
     ],
     highlights: [
       'Entrées terre & mer : Salade chinoise, Fruits de mer, Mexicaine, Charcuterie',
-      'Plats gourmands : Poulet rôti, Pilons panés, Agneau rôti grillé, Porc',
+      'Plats gourmands : Poulet rôti, Pilons panés, Agneau rôti grillé, Porc, Thiébou Yaap',
       'Accompagnements riches : Pommes sautées, Légumes sautés, Plantain, Couscous',
       'Pause café avec jus locaux pressés'
     ],
-    options: ['Thiébou Yaap'],
     courses: [
       {
         title: 'Entrées Terroir & Océan',
@@ -218,7 +216,7 @@ export const MENUS_DATA: MenuItem[] = [
       },
       {
         title: 'Plats de Viandes Rôties & Grillées',
-        description: 'Poulet rôti grillé croustillant, pilons panés dorés, agneau rôti fondant et rôti de porc aux aromates.'
+        description: 'Poulet rôti grillé croustillant, pilons panés dorés, agneau rôti fondant, rôti de porc aux aromates et Thiébou Yaap.'
       },
       {
         title: 'Accompagnements Traiteur',
@@ -237,7 +235,7 @@ export const MENUS_DATA: MenuItem[] = [
     number: 3,
     tagline: "L'expérience la plus complète, pour les événements d'exception",
     description:
-      'La signature d’excellence pour vos grands galas et mariages prestigieux. Pigeons rôtis, poisson au four, agneau grillé, macédoine de crevettes, et spécialités locales authentiques (Attiéké, Ablo, Gratin).',
+      'La signature d’excellence pour vos grands galas et mariages prestigieux. Pigeons rôtis, poisson au four, agneau grillé, Thiébou Yaap, macédoine de crevettes, et spécialités locales authentiques (Attiéké, Ablo, Gratin).',
     image: '/images/table-honneur.jpg',
     alt: 'Table d’apparat et buffet d’exception pour le Menu 3 Prestige Ngouda',
     caption: '« Devis personnalisé »',
@@ -254,7 +252,7 @@ export const MENUS_DATA: MenuItem[] = [
       {
         title: 'Plats',
         image: '/images/flyers/menu3-plats.jpg',
-        items: 'Poulet pané, Agneau rôti grillé, Rôti de porc, Pigeons rôtis, Poisson au four'
+        items: 'Poulet pané, Agneau rôti grillé, Rôti de porc, Pigeons rôtis, Poisson au four, Thiébou Yaap'
       },
       {
         title: 'Accompagnements',
@@ -269,11 +267,10 @@ export const MENUS_DATA: MenuItem[] = [
     ],
     highlights: [
       'Entrées d’apparat : Macédoine crevettes, Tomates au thon, Niçoise, Salade chinoise',
-      'Plats nobles : Pigeons rôtis, Poisson au four, Agneau rôti grillé, Poulet pané',
+      'Plats nobles : Pigeons rôtis, Poisson au four, Agneau rôti grillé, Poulet pané, Thiébou Yaap',
       'Accompagnements royaux : Attiéké, Ablo, Gratin, Vermicelles',
       'Pause café Prestige complète : petits fours sucrés, amuse-bouches salés & jus frais'
     ],
-    options: ['Thiébou Yaap'],
     courses: [
       {
         title: 'Prélude Gourmand & Océan',
@@ -281,7 +278,7 @@ export const MENUS_DATA: MenuItem[] = [
       },
       {
         title: 'Mets de Célébration',
-        description: 'Pigeons rôtis d’exception, poisson noble cuit au four, agneau rôti grillé tendre, poulet pané doré et rôti de porc.'
+        description: 'Pigeons rôtis d’exception, poisson noble cuit au four, agneau rôti grillé tendre, poulet pané doré, rôti de porc et Thiébou Yaap.'
       },
       {
         title: 'Symphonie des Accompagnements',

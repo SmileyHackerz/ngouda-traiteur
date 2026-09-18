@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Coffee, Phone, Plus } from 'lucide-react';
+import { Coffee, Phone } from 'lucide-react';
 import { MenuItem } from '../../types';
 import { SUMMARY_FLYER, COFFEE_BREAK_FLYER, MENUS_DATA } from '../../data/menus.data';
 import { CONTACT_DATA, BRAND } from '../../data/contact.data';
@@ -32,8 +32,6 @@ interface Sheet {
   bannerTitle: string;
   bannerText: string;
   formulas: { name: string; desc: string }[];
-  /** Suppléments sur demande (menus) */
-  options?: string[];
 }
 
 const buildSheet = (id: FlyerId): Sheet => {
@@ -81,8 +79,7 @@ const buildSheet = (id: FlyerId): Sheet => {
       menu.number === 3
         ? 'Chaque détail est conçu selon vos exigences. Dressage et service d’exception sur place.'
         : 'Chaque événement est unique, conçu et dressé sur place selon vos envies.',
-    formulas: [],
-    options: menu.options
+    formulas: []
   };
 };
 
@@ -140,23 +137,13 @@ export const FlyerSheet = forwardRef<HTMLDivElement, FlyerSheetProps>(({ flyerId
           ))}
         </div>
 
-        {/* Notes : options sur demande, pause café */}
-        <div className="border border-dashed border-gold/70 bg-gold/[0.07] py-2 px-3 font-body text-[11.5px] sm:text-[12px] leading-snug text-on-surface text-center space-y-1">
-          {sheet.options && sheet.options.length > 0 && (
-            <p className="flex items-start justify-center gap-2">
-              <Plus className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" strokeWidth={1.6} />
-              <span>
-                <strong className="font-semibold">En option</strong> — {sheet.options.join(', ')}, sur demande
-              </span>
-            </p>
-          )}
-          <p className="flex items-start justify-center gap-2">
-            <Coffee className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" strokeWidth={1.6} />
-            <span>
-              <strong className="font-semibold">{sheet.noteLabel}</strong> — {sheet.noteText}
-            </span>
-          </p>
-        </div>
+        {/* Note */}
+        <p className="flex items-start justify-center gap-2 border border-dashed border-gold/70 bg-gold/[0.07] py-2 px-3 font-body text-[11.5px] sm:text-[12px] leading-snug text-on-surface text-center">
+          <Coffee className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" strokeWidth={1.6} />
+          <span>
+            <strong className="font-semibold">{sheet.noteLabel}</strong> — {sheet.noteText}
+          </span>
+        </p>
 
         {/* Bandeau */}
         <div className="bg-primary-container text-on-primary text-center py-2.5 px-3">

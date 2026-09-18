@@ -25,8 +25,6 @@ export interface MenuItem {
   coffeeBreak?: string;
   categories: MenuCategory[];
   highlights: string[];
-  /** Suppléments disponibles sur demande pour cette formule */
-  options?: string[];
   courses?: MenuCourse[];
 }
 
@@ -53,7 +51,6 @@ export interface ReservationFormData {
   eventLocation: string;
   selectedMenu: string;
   coffeeBreak: boolean;
-  thiebouYaap: boolean;
   customRequests: string;
   clientName: string;
   clientPhone: string;
