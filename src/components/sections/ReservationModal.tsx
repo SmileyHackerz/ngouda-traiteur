@@ -40,6 +40,7 @@ const INITIAL_FORM: ReservationFormData = {
   eventLocation: '',
   selectedMenu: '',
   coffeeBreak: false,
+  thiebouYaap: false,
   customRequests: '',
   clientName: '',
   clientPhone: '',
@@ -88,7 +89,8 @@ export const buildQuoteMessage = (f: ReservationFormData, ref: string) => {
     `📅 Date : ${formatDate(f.eventDate)}`,
     `📍 Lieu : ${f.eventLocation}`,
     `🍽️ Menu : ${f.selectedMenu}`,
-    `☕ Pause café : ${f.coffeeBreak ? 'oui, en option' : 'non'}`
+    `☕ Pause café : ${f.coffeeBreak ? 'oui, en option' : 'non'}`,
+    `🍚 Thiébou Yaap : ${f.thiebouYaap ? 'oui, en option' : 'non'}`
   ];
   if (f.customRequests.trim()) lines.push(`📝 Souhaits : ${f.customRequests.trim()}`);
   lines.push(``, `Nom : ${f.clientName.trim()}`, `Téléphone : ${f.clientPhone.trim()}`);
@@ -371,6 +373,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                       ['Lieu', formData.eventLocation],
                       ['Menu', formData.selectedMenu],
                       ['Pause café', formData.coffeeBreak ? 'Oui, en option' : 'Non'],
+                      ['Thiébou Yaap', formData.thiebouYaap ? 'Oui, en option' : 'Non'],
                       ['Contact', `${formData.clientName} · ${formData.clientPhone}`]
                     ].map(([k, v]) => (
                       <React.Fragment key={k}>
@@ -590,35 +593,50 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                           </div>
                           <FieldError id="err-menu" msg={errors.selectedMenu} />
 
-                          {/* Option pause café */}
-                          <label
-                            className={`mt-4 flex items-start gap-4 p-4 border rounded-[4px] cursor-pointer transition-[border-color,background-color] duration-300 ${
-                              formData.coffeeBreak ? 'border-gold bg-gold/[0.08]' : 'border-outline-variant/60 bg-surface-container-lowest hover:border-gold'
-                            }`}
-                          >
-                            <input
-                              type="checkbox"
-                              className="sr-only"
-                              checked={formData.coffeeBreak}
-                              onChange={(e) => set('coffeeBreak', e.target.checked)}
-                            />
-                            <span
-                              aria-hidden="true"
-                              className={`mt-0.5 w-5 h-5 shrink-0 border rounded-[3px] flex items-center justify-center transition-colors ${
-                                formData.coffeeBreak ? 'bg-primary border-primary' : 'border-outline'
-                              }`}
-                            >
-                              {formData.coffeeBreak && <Check className="w-3.5 h-3.5 text-gold-light" />}
-                            </span>
-                            <span>
-                              <span className="flex items-center gap-2 font-display text-base font-semibold text-primary">
-                                <Coffee className="w-4 h-4 text-gold" strokeWidth={1.6} /> Ajouter la pause café
-                              </span>
-                              <span className="block mt-1 font-body text-[13px] leading-snug text-on-surface-variant">
-                                Thé, café, lait, Nescao, mini-viennoiseries, petits fours et jus naturels (bissap, gingembre, bouye). En option sur chaque menu.
-                              </span>
-                            </span>
-                          </label>
+                          {/* Options sur demande */}
+                          <div className="mt-4 space-y-2.5">
+                            {[
+                              {
+                                key: 'coffeeBreak' as const,
+                                icon: Coffee,
+                                title: 'Ajouter la pause café',
+                                text: 'Thé, café, lait, Nescao, mini-viennoiseries, petits fours et jus naturels (bissap, gingembre, bouye).'
+                              },
+                              {
+                                key: 'thiebouYaap' as const,
+                                icon: UtensilsCrossed,
+                                title: 'Ajouter le Thiébou Yaap',
+                                text: 'Riz à la viande mijoté, servi en accompagnement supplémentaire sur chaque menu.'
+                              }
+                            ].map((opt) => {
+                              const Icon = opt.icon;
+                              const checked = formData[opt.key];
+                              return (
+                                <label
+                                  key={opt.key}
+                                  className={`flex items-start gap-4 p-4 border rounded-[4px] cursor-pointer transition-[border-color,background-color] duration-300 ${
+                                    checked ? 'border-gold bg-gold/[0.08]' : 'border-outline-variant/60 bg-surface-container-lowest hover:border-gold'
+                                  }`}
+                                >
+                                  <input type="checkbox" className="sr-only" checked={checked} onChange={(e) => set(opt.key, e.target.checked)} />
+                                  <span
+                                    aria-hidden="true"
+                                    className={`mt-0.5 w-5 h-5 shrink-0 border rounded-[3px] flex items-center justify-center transition-colors ${
+                                      checked ? 'bg-primary border-primary' : 'border-outline'
+                                    }`}
+                                  >
+                                    {checked && <Check className="w-3.5 h-3.5 text-gold-light" />}
+                                  </span>
+                                  <span>
+                                    <span className="flex items-center gap-2 font-display text-base font-semibold text-primary">
+                                      <Icon className="w-4 h-4 text-gold" strokeWidth={1.6} /> {opt.title}
+                                    </span>
+                                    <span className="block mt-1 font-body text-[13px] leading-snug text-on-surface-variant">{opt.text} En option.</span>
+                                  </span>
+                                </label>
+                              );
+                            })}
+                          </div>
 
                           <div className="mt-6">
                             <Label htmlFor="customRequests">Souhaits, allergies, options (facultatif)</Label>

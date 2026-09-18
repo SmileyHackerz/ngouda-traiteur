@@ -133,7 +133,7 @@ export const MENUS_DATA: MenuItem[] = [
       {
         title: 'Accompagnement',
         image: '/images/flyers/menu1-accompagnement.jpg',
-        items: 'Frites, Plantain, Jardinière de légumes, Couscous, Riz blanc, Thiébou Yaap'
+        items: 'Frites, Plantain, Jardinière de légumes, Couscous, Riz blanc'
       },
       {
         title: 'Dessert',
@@ -144,9 +144,10 @@ export const MENUS_DATA: MenuItem[] = [
     highlights: [
       'Entrées fraîches : Salade de crudités, Niçoise, Mexicaine',
       'Viandes rôties & grillées : Poulet, Agneau, Porc',
-      'Accompagnements variés : Frites, Plantain, Couscous, Thiébou Yaap',
+      'Accompagnements variés : Frites, Plantain, Couscous, Riz blanc',
       'Dessert : Fruits frais de saison & Pause café en option'
     ],
+    options: ['Thiébou Yaap'],
     courses: [
       {
         title: 'Entrée Fraîche',
@@ -158,7 +159,7 @@ export const MENUS_DATA: MenuItem[] = [
       },
       {
         title: 'Accompagnements au Choix',
-        description: 'Frites dorées, bananes plantains frites (Alloco), jardinière de légumes, couscous fin, riz blanc parfumé et Thiébou Yaap.'
+        description: 'Frites dorées, bananes plantains frites (Alloco), jardinière de légumes, couscous fin et riz blanc parfumé.'
       },
       {
         title: 'Douceur de Clôture',
@@ -195,7 +196,7 @@ export const MENUS_DATA: MenuItem[] = [
       {
         title: 'Accompagnements',
         image: '/images/flyers/menu2-accompagnements.jpg',
-        items: 'Frites, Plantain, Légumes sautés, Pommes de terre sautées, Couscous, Riz blanc, Thiébou Yaap'
+        items: 'Frites, Plantain, Légumes sautés, Pommes de terre sautées, Couscous, Riz blanc'
       },
       {
         title: 'Dessert',
@@ -206,9 +207,10 @@ export const MENUS_DATA: MenuItem[] = [
     highlights: [
       'Entrées terre & mer : Salade chinoise, Fruits de mer, Mexicaine, Charcuterie',
       'Plats gourmands : Poulet rôti, Pilons panés, Agneau rôti grillé, Porc',
-      'Accompagnements riches : Pommes sautées, Légumes sautés, Plantain, Thiébou Yaap',
+      'Accompagnements riches : Pommes sautées, Légumes sautés, Plantain, Couscous',
       'Pause café avec jus locaux pressés'
     ],
+    options: ['Thiébou Yaap'],
     courses: [
       {
         title: 'Entrées Terroir & Océan',
@@ -220,7 +222,7 @@ export const MENUS_DATA: MenuItem[] = [
       },
       {
         title: 'Accompagnements Traiteur',
-        description: 'Frites maison, plantains mûrs dorés, poêlée de légumes sautés, pommes de terre sautées persillées, couscous, riz blanc et Thiébou Yaap.'
+        description: 'Frites maison, plantains mûrs dorés, poêlée de légumes sautés, pommes de terre sautées persillées, couscous et riz blanc.'
       },
       {
         title: 'Dessert de Saison',
@@ -235,7 +237,7 @@ export const MENUS_DATA: MenuItem[] = [
     number: 3,
     tagline: "L'expérience la plus complète, pour les événements d'exception",
     description:
-      'La signature d’excellence pour vos grands galas et mariages prestigieux. Pigeons rôtis, poisson au four, agneau grillé, macédoine de crevettes, et spécialités locales authentiques (Attiéké, Ablo, Thiébou Yaap, Gratin).',
+      'La signature d’excellence pour vos grands galas et mariages prestigieux. Pigeons rôtis, poisson au four, agneau grillé, macédoine de crevettes, et spécialités locales authentiques (Attiéké, Ablo, Gratin).',
     image: '/images/table-honneur.jpg',
     alt: 'Table d’apparat et buffet d’exception pour le Menu 3 Prestige Ngouda',
     caption: '« Devis personnalisé »',
@@ -257,7 +259,7 @@ export const MENUS_DATA: MenuItem[] = [
       {
         title: 'Accompagnements',
         image: '/images/flyers/menu3-accompagnements.jpg',
-        items: 'Frites, Plantain, Légumes sautés, Gratin, Couscous, Riz blanc, Thiébou Yaap, Attiéké, Ablo, Vermicelles'
+        items: 'Frites, Plantain, Légumes sautés, Gratin, Couscous, Riz blanc, Attiéké, Ablo, Vermicelles'
       },
       {
         title: 'Dessert',
@@ -268,9 +270,10 @@ export const MENUS_DATA: MenuItem[] = [
     highlights: [
       'Entrées d’apparat : Macédoine crevettes, Tomates au thon, Niçoise, Salade chinoise',
       'Plats nobles : Pigeons rôtis, Poisson au four, Agneau rôti grillé, Poulet pané',
-      'Accompagnements royaux : Attiéké, Ablo, Gratin, Vermicelles, Thiébou Yaap',
+      'Accompagnements royaux : Attiéké, Ablo, Gratin, Vermicelles',
       'Pause café Prestige complète : petits fours sucrés, amuse-bouches salés & jus frais'
     ],
+    options: ['Thiébou Yaap'],
     courses: [
       {
         title: 'Prélude Gourmand & Océan',
@@ -282,7 +285,7 @@ export const MENUS_DATA: MenuItem[] = [
       },
       {
         title: 'Symphonie des Accompagnements',
-        description: 'Frites croustillantes, plantain doré, poêlée de légumes, gratin fondant, couscous, riz blanc parfumé, Thiébou Yaap mijoté, Attiéké ivoirien, Ablo moelleux et vermicelles dorés.'
+        description: 'Frites croustillantes, plantain doré, poêlée de légumes, gratin fondant, couscous, riz blanc parfumé, Attiéké ivoirien, Ablo moelleux et vermicelles dorés.'
       },
       {
         title: 'Fraîcheur Sucrée',

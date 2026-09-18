@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { ArrowRight, ArrowUpRight, Coffee, FileText } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Coffee, FileText, Plus } from 'lucide-react';
 import { MenuItem } from '../../types';
 import { MENUS_DATA, CUSTOM_MENU_INFO } from '../../data/menus.data';
 import { Button } from '../ui/Button';
@@ -50,18 +50,29 @@ const MenuCard: React.FC<{
         ))}
       </ul>
 
-      <button
-        type="button"
-        onClick={() => onViewMenuPdf(menu, 'coffee')}
-        className="group/coffee mt-5 flex items-start gap-2 text-left font-body text-[13px] leading-snug text-on-surface-variant hover:text-primary transition-colors"
-        title="Voir le détail de la pause café"
-      >
-        <Coffee className="w-4 h-4 text-gold shrink-0 mt-0.5" strokeWidth={1.6} />
-        <span>
-          <span className="font-label text-[10.5px] font-semibold uppercase tracking-[0.16em] text-secondary mr-1.5">Option</span>
-          Pause café disponible en option — <span className="link-gold text-primary">voir le détail</span>
-        </span>
-      </button>
+      <div className="mt-5 space-y-2 font-body text-[13px] leading-snug text-on-surface-variant">
+        {menu.options?.map((opt) => (
+          <p key={opt} className="flex items-start gap-2">
+            <Plus className="w-4 h-4 text-gold shrink-0 mt-0.5" strokeWidth={1.6} />
+            <span>
+              <span className="font-label text-[10.5px] font-semibold uppercase tracking-[0.16em] text-secondary mr-1.5">Option</span>
+              {opt}, sur demande
+            </span>
+          </p>
+        ))}
+        <button
+          type="button"
+          onClick={() => onViewMenuPdf(menu, 'coffee')}
+          className="flex items-start gap-2 text-left hover:text-primary transition-colors"
+          title="Voir le détail de la pause café"
+        >
+          <Coffee className="w-4 h-4 text-gold shrink-0 mt-0.5" strokeWidth={1.6} />
+          <span>
+            <span className="font-label text-[10.5px] font-semibold uppercase tracking-[0.16em] text-secondary mr-1.5">Option</span>
+            Pause café — <span className="link-gold text-primary">voir le détail</span>
+          </span>
+        </button>
+      </div>
 
       <div className="mt-auto pt-6 flex items-center justify-between gap-4 border-t border-outline-variant/40 mt-6">
         <Button variant="tertiary" onClick={() => onViewMenuPdf(menu, menu.id)} icon={<ArrowUpRight className="w-3.5 h-3.5" />}>
