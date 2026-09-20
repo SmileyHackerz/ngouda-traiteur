@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
             href="#accueil"
             onClick={(e) => go(e, '#accueil')}
             className="group inline-flex items-center rounded-[3px]"
-            aria-label="Ngouda Traiteur — retour à l'accueil"
+            aria-label="N'Gouda Traiteur — retour à l'accueil"
           >
             {/* Mobile : lockup compact centré */}
             <span className="lg:hidden inline-flex items-center gap-2.5">

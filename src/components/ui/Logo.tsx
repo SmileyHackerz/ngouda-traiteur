@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 
 /**
- * Identité Ngouda Traiteur.
+ * Identité N'Gouda Traiteur.
  *
  * Le monogramme : une cloche de service en trait fin, dont le dôme
  * abrite le « N » — le plat que l'on dévoile. Le dôme peut se
@@ -86,7 +86,7 @@ export const LogoMark: React.FC<MarkProps> = ({ className = '', style, tone = 'd
 
 interface WordmarkProps {
   tone?: Tone;
-  /** Taille de la ligne « NGOUDA » — tout le lockup est en em. */
+  /** Taille de la ligne « N'GOUDA » — tout le lockup est en em. */
   size?: string;
   align?: 'left' | 'center';
   className?: string;
@@ -103,7 +103,7 @@ export const Wordmark: React.FC<WordmarkProps> = ({ tone = 'dark', size = '1.5re
       style={{ fontSize: size }}
     >
       <span className={`font-display font-semibold uppercase tracking-[0.22em] ${name}`} style={{ marginRight: '-0.22em' }}>
-        Ngouda
+        N'Gouda
       </span>
       <span className={`mt-[0.42em] inline-flex items-center gap-[0.55em] font-label font-semibold uppercase tracking-[0.42em] ${sub}`} style={{ fontSize: '0.4em' }}>
         <i className={`block h-px w-[1.6em] ${line}`} aria-hidden="true" />
@@ -127,7 +127,7 @@ export const Logo: React.FC<LogoProps> = ({ tone = 'dark', layout = 'horizontal'
   if (layout === 'stacked') {
     return (
       <span className={`inline-flex flex-col items-center ${className}`}>
-        <LogoMark tone={tone} lift={lift} className="block" style={{ width: markSize, height: markSize }} title="Ngouda Traiteur" />
+        <LogoMark tone={tone} lift={lift} className="block" style={{ width: markSize, height: markSize }} title="N'Gouda Traiteur" />
         <Wordmark tone={tone} size={`${Math.round(markSize * 0.36)}px`} align="center" className="mt-[0.1em]" />
       </span>
     );
@@ -135,7 +135,7 @@ export const Logo: React.FC<LogoProps> = ({ tone = 'dark', layout = 'horizontal'
 
   return (
     <span className={`inline-flex items-center gap-[0.55em] ${className}`} style={{ fontSize: markSize }}>
-      <LogoMark tone={tone} className="block shrink-0" style={{ width: markSize, height: markSize }} title="Ngouda Traiteur" />
+      <LogoMark tone={tone} className="block shrink-0" style={{ width: markSize, height: markSize }} title="N'Gouda Traiteur" />
       <Wordmark tone={tone} size={`${Math.round(markSize * 0.56)}px`} />
     </span>
   );
@@ -165,7 +165,7 @@ export const LogoSeal: React.FC<{ className?: string; tone?: Tone; spin?: boolea
           letterSpacing="4.2"
         >
           <textPath href="#seal-path" startOffset="0">
-            NGOUDA TRAITEUR · DAKAR · L'ART DE RECEVOIR ·
+            N'GOUDA TRAITEUR · DAKAR · L'ART DE RECEVOIR ·
           </textPath>
         </text>
       </motion.g>

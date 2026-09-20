@@ -1,8 +1,8 @@
 import { ContactDetails } from '../types';
 
 export const BRAND = {
-  name: 'Ngouda Traiteur',
-  shortName: 'Ngouda',
+  name: "N'Gouda Traiteur",
+  shortName: "N'Gouda",
   descriptor: 'Traiteur Événementiel',
   city: 'Dakar',
   tagline: "L'art de recevoir, sur-mesure",
@@ -15,7 +15,7 @@ export const CONTACT_DATA: ContactDetails = {
   whatsappNumber: '221785364655',
   whatsappUrl:
     'https://wa.me/221785364655?text=' +
-    encodeURIComponent('Bonjour Ngouda Traiteur, je souhaite obtenir des informations pour un événement.'),
+    encodeURIComponent("Bonjour N'Gouda Traiteur, je souhaite obtenir des informations pour un événement."),
   email: 'contact@mariengouda.com',
   address: 'Keur Massar, Jaxaay Unité 4',
   city: 'Dakar',

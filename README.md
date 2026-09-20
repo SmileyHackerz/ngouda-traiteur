@@ -1,6 +1,6 @@
-# Ngouda Traiteur — site vitrine
+# N'Gouda Traiteur — site vitrine
 
-Site one-page de **Ngouda Traiteur**, traiteur événementiel à Dakar.
+Site one-page de **N'Gouda Traiteur**, traiteur événementiel à Dakar.
 
 - React 19 + TypeScript + Vite 6
 - Tailwind CSS 4 (`@tailwindcss/vite`), `motion` pour les animations, `lucide-react` pour les icônes

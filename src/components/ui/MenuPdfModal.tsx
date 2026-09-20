@@ -86,7 +86,7 @@ export const MenuPdfModal: React.FC<MenuPdfModalProps> = ({ menu, initialFlyerId
             {/* En-tête */}
             <div className="px-5 sm:px-7 pt-6 sm:pt-5 pb-4 border-b border-gold/25 flex items-center justify-between gap-3">
               <div className="min-w-0">
-                <span className="block font-label text-[10px] uppercase tracking-[0.28em] text-gold-light">Ngouda Traiteur · La carte</span>
+                <span className="block font-label text-[10px] uppercase tracking-[0.28em] text-gold-light">N'Gouda Traiteur · La carte</span>
                 <h2 id="menu-modal-title" className="mt-0.5 font-display text-lg sm:text-xl font-semibold leading-tight truncate">
                   {flyerTitle(activeTab)}
                 </h2>
