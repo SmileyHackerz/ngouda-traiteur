@@ -16,10 +16,12 @@ export const CONTACT_DATA: ContactDetails = {
   whatsappUrl:
     'https://wa.me/221785364655?text=' +
     encodeURIComponent("Bonjour N'Gouda Traiteur, je souhaite obtenir des informations pour un événement."),
-  email: 'contact@mariengouda.com',
+  email: 'ngoudatraiteur@gmail.com',
   address: 'Keur Massar, Jaxaay Unité 4',
   city: 'Dakar',
-  country: 'Sénégal'
+  country: 'Sénégal',
+  hours: 'Du lundi au dimanche, 9 h – 23 h',
+  hoursShort: 'Lun. – Dim. · 9 h – 23 h'
 };
 
 /** Ouvre une conversation WhatsApp avec un message pré-rempli. */

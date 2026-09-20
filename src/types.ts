@@ -66,4 +66,7 @@ export interface ContactDetails {
   address: string;
   city: string;
   country: string;
+  /** Horaires d'ouverture, forme longue et courte */
+  hours: string;
+  hoursShort: string;
 }

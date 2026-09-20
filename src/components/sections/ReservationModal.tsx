@@ -80,19 +80,20 @@ const formatDate = (iso: string) => {
 /** Message WhatsApp pré-rempli à partir du formulaire. */
 export const buildQuoteMessage = (f: ReservationFormData, ref: string) => {
   const lines = [
-    `Bonjour ${BRAND.name} 👋`,
+    `Bonjour ${BRAND.name},`,
     `Je souhaite recevoir un devis pour mon événement.`,
     ``,
-    `📌 Type : ${f.eventType}`,
-    `👥 Convives : ${f.guestCount}`,
-    `📅 Date : ${formatDate(f.eventDate)}`,
-    `📍 Lieu : ${f.eventLocation}`,
-    `🍽️ Menu : ${f.selectedMenu}`,
-    `☕ Pause café : ${f.coffeeBreak ? 'oui, en option' : 'non'}`
+    `*Votre événement*`,
+    `- Type : ${f.eventType}`,
+    `- Convives : ${f.guestCount}`,
+    `- Date : ${formatDate(f.eventDate)}`,
+    `- Lieu : ${f.eventLocation}`,
+    `- Menu : ${f.selectedMenu}`,
+    `- Pause café : ${f.coffeeBreak ? 'oui, en option' : 'non'}`
   ];
-  if (f.customRequests.trim()) lines.push(`📝 Souhaits : ${f.customRequests.trim()}`);
-  lines.push(``, `Nom : ${f.clientName.trim()}`, `Téléphone : ${f.clientPhone.trim()}`);
-  if (f.clientEmail.trim()) lines.push(`E-mail : ${f.clientEmail.trim()}`);
+  if (f.customRequests.trim()) lines.push(`- Souhaits : ${f.customRequests.trim()}`);
+  lines.push(``, `*Vos coordonnées*`, `- Nom : ${f.clientName.trim()}`, `- Téléphone : ${f.clientPhone.trim()}`);
+  if (f.clientEmail.trim()) lines.push(`- E-mail : ${f.clientEmail.trim()}`);
   lines.push(``, `Réf. ${ref}`);
   return lines.join('\n');
 };

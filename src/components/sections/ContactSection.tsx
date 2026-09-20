@@ -9,7 +9,7 @@ const ROWS = [
     icon: MessageCircle,
     label: 'WhatsApp',
     value: CONTACT_DATA.phoneDisplay,
-    hint: 'Réponse rapide, 7 j / 7',
+    hint: `Réponse rapide, ${CONTACT_DATA.hoursShort}`,
     href: CONTACT_DATA.whatsappUrl,
     external: true
   },
@@ -17,7 +17,7 @@ const ROWS = [
     icon: Phone,
     label: 'Téléphone',
     value: CONTACT_DATA.phoneDisplay,
-    hint: 'Du lundi au samedi, 9 h – 20 h',
+    hint: CONTACT_DATA.hours,
     href: `tel:${CONTACT_DATA.phoneRaw}`
   },
   {
@@ -51,7 +51,17 @@ export const ContactSection: React.FC = () => {
           <Reveal kind="rise" delay={0.2} className="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6 font-body text-[15px] text-on-surface-variant">
             <div className="border-t border-gold/50 pt-4">
               <span className="flex items-center gap-2 font-label text-[10.5px] font-semibold uppercase tracking-[0.2em] text-secondary">
-                <Clock className="w-3.5 h-3.5" strokeWidth={1.6} /> Zone d'intervention
+                <Clock className="w-3.5 h-3.5" strokeWidth={1.6} /> Horaires
+              </span>
+              <p className="mt-2 leading-relaxed">
+                <span className="font-display text-lg text-primary font-medium">{CONTACT_DATA.hours}</span>
+                <br />
+                Sept jours sur sept, pour vos demandes de devis comme pour vos événements.
+              </p>
+            </div>
+            <div className="border-t border-gold/50 pt-4">
+              <span className="flex items-center gap-2 font-label text-[10.5px] font-semibold uppercase tracking-[0.2em] text-secondary">
+                <MapPin className="w-3.5 h-3.5" strokeWidth={1.6} /> Zone d'intervention
               </span>
               <p className="mt-2 leading-relaxed">
                 Dakar et sa presqu'île, Keur Massar, Rufisque, la Petite-Côte (Saly, Somone) et les régions sur devis.

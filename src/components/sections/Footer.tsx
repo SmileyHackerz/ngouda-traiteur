@@ -56,6 +56,9 @@ export const Footer: React.FC = () => {
                 <br />
                 {CONTACT_DATA.city}, {CONTACT_DATA.country}
               </span>
+              <span className="block mt-2 font-label text-[11px] uppercase tracking-[0.16em] text-gold-light">
+                {CONTACT_DATA.hoursShort}
+              </span>
               <span className="mt-4 flex items-center justify-center md:justify-start gap-4">
                 <a href="#" aria-label="Instagram" className="text-gold-light/80 hover:text-gold-light transition-colors">
                   <Instagram className="w-5 h-5" strokeWidth={1.5} />
